@@ -25,11 +25,22 @@ class ProductCollectionCellViewModel: ViewModel {
         self.name = Observable<String>(product.name)
         self.image = Observable<UIImage>(#imageLiteral(resourceName: "Placeholder"))
         downloadBadge()
+        downloadProductImage(productDetails: product)
     }
 
 }
 
 extension ProductCollectionCellViewModel {
+    
+    private func downloadProductImage(productDetails: Product) {
+
+        imageService.downloadImage(key: productDetails.imageKey) { [weak self] result in
+        guard let self = self else { return }
+        if let image = try? result.unwrapped() {
+          self.image.value = image
+        }
+      }
+    }
     
     private func downloadBadge() {
         guard let badgeName = getBadgeName() else {
