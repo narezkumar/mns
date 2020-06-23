@@ -1,5 +1,5 @@
-# mns
-mark and spencers
+# mark and spencers
+assingment
 
 
 1.  Product page designed and updated
