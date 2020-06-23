@@ -14,7 +14,7 @@ class ProductCollectionViewCell: UICollectionViewCell,ViewModelConfigurable {
 
     // MARK: Properties
 
-    private var viewModel: ProductCollectionCellViewModel?
+    var viewModel: ProductCollectionCellViewModel?
     
     // MARK: Initializers
 
@@ -35,6 +35,7 @@ class ProductCollectionViewCell: UICollectionViewCell,ViewModelConfigurable {
         self.viewModel = viewModel
         bind()
     }
+
 
 }
 

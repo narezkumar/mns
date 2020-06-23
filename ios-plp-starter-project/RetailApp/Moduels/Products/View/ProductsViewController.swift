@@ -84,9 +84,9 @@ extension ProductsViewController {
 
     // MARK: - Navigation
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let product = viewModel?.product(for: indexPath) else { return }
+        guard let product = viewModel?.product(for: indexPath), let cell = collectionView.cellForItem(at: indexPath) as? ProductCollectionViewCell else { return }
         let request = Request(id: product.id, price: product.price, name: product.name)
-        viewModel?.navigator?.showProductDetails(for: request, listingImage: nil)
+        viewModel?.navigator?.showProductDetails(for: request, listingImage: cell.viewModel?.image.value)
     }
 
 }
