@@ -10,4 +10,6 @@ assingment
 
 Currently photo is not loading, returning 404 error or mentioned path.
 
+eg. http://interview-tech-testing.herokuapp.com/image/SD_01_T38_1502_QA_X_EC_90.jpg
+
 Only badges image is loading.
